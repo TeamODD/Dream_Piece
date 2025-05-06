@@ -103,11 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144aeaac5d613434dad49a43164513bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 8
-  JumpSpeed: 12
-  PushForce: 10
-  SlowSpeed: 3
-  SlowJump: 3
+  Speed: 10
+  JumpSpeed: 10
+  PushForce: 15
+  SlowSpeed: 2
+  SlowJump: 2
 --- !u!50 &197937804144519893
 Rigidbody2D:
   serializedVersion: 5

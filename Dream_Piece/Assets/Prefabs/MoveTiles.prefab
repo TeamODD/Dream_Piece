@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2474902618119659146}
   m_Layer: 0
   m_Name: LeftPoint
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4027284776213484242}
   m_Layer: 0
   m_Name: RightPoint
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 6787584477114704916}
   m_Layer: 0
   m_Name: MoveTile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 2474902618119659146}
   pointB: {fileID: 4027284776213484242}
-  Speed: 2
+  Speed: 0.5
 --- !u!1 &3114855970604499008
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 13012438456778664}
   m_Layer: 0
   m_Name: MoveTiles
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

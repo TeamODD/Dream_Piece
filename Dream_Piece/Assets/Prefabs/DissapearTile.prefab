@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5576894246163063222}
   m_Layer: 0
   m_Name: DissapearTile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,5 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6e7569ef9823649b9acf2999358dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoxDissapearTime: 2
-  BoxAppearTime: 5
+  BoxDissapearTime: 1
+  BoxAppearTime: 2
