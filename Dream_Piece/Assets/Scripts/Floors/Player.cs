@@ -11,9 +11,20 @@ public class Player : MonoBehaviour
     //public float BounceForce = 2f;
     public float SlowSpeed = 3f;
     public float SlowJump = 3f;
-    private bool grounded = true;
+    private bool grounded = false;
     bool isJumping = false;
     private bool canMove = true;
+    public bool isOnIce = false;
+
+    [SerializeField] 
+    float iceAcceleration = 10f;
+    [SerializeField] 
+    float iceDeceleration = 5f;
+    [SerializeField] 
+    float maxIceSpeed = 5f;
+    [SerializeField] 
+    float iceStartBoost = 3f;
+
     float vx = 0;
     Rigidbody2D rid;
    
@@ -27,16 +38,35 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vx = Input.GetAxisRaw("Horizontal") * Speed;
-        float vy = GetComponent<Rigidbody2D>().linearVelocityY;
+        float vy = rid.linearVelocityY;
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float vx = rid.linearVelocity.x;
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
             vy = JumpSpeed;
         }
-      
 
-        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(vx, vy);
+        if (!isOnIce)
+        {
+            vx = inputX * Speed;
+        }
+        else
+        {
+            if (Mathf.Abs(vx) < 0.1f)
+            {
+                // 정지 상태에서 방향키 누를 때만 살짝 보정해서 더 세게 가속
+                vx += inputX * (iceAcceleration + 5f) * Time.deltaTime;
+            }
+            else
+            {
+                vx += inputX * iceAcceleration * Time.deltaTime;
+            }
+
+            vx = Mathf.Clamp(vx, -maxIceSpeed, maxIceSpeed);
+        }
+
+        rid.linearVelocity = new Vector2(vx, vy);
     }
 
 
@@ -56,5 +86,4 @@ public class Player : MonoBehaviour
         }
     }
 }
-
 
