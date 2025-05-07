@@ -5,8 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
-  - BounceLeft
-  - BounceRight
+  - BLT
+  - BLB
+  - BRT
+  - BRB
+  - Bal
   layers:
   - Default
   - TransparentFX
