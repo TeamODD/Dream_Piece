@@ -10,6 +10,9 @@ TagManager:
   - BRT
   - BRB
   - Bal
+  - DreamPiece
+  - ClearPortal
+  - Fall
   layers:
   - Default
   - TransparentFX
