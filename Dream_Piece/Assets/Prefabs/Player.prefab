@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  JumpSpeed: 10
-  PushForce: 15
+  JumpSpeed: 12
+  PushForce: 5
   SlowSpeed: 2
   SlowJump: 2
   isOnIce: 0
@@ -183,7 +183,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
