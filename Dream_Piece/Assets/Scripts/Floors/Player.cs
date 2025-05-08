@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,8 +10,6 @@ public class Player : MonoBehaviour
     public float JumpSpeed = 2f;
     public float PushForce = 10f;
     //public float BounceForce = 2f;
-    public float SlowSpeed = 3f;
-    public float SlowJump = 3f;
     private bool grounded = false;
     bool isJumping = false;
     private bool canMove = true;
@@ -26,6 +25,8 @@ public class Player : MonoBehaviour
     float iceStartBoost = 3f;
     [SerializeField]
     private float bounceForce = 8f;
+    [SerializeField]
+    Transform RespawnTransform;
 
     bool isBouncing = false;
     float bounceCooldown = 0.5f;
@@ -95,12 +96,32 @@ public class Player : MonoBehaviour
         bounceCooldown = 0.5f;
     }
 
+    void Respawn()
+    {
+       gameObject.transform.position = RespawnTransform.position;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))
         {
             grounded = true;
+        }
+
+        if (collision.CompareTag("DreamPiece"))
+        {
+            GameManager.Instance.AddDreamPiece();
+        }
+
+        if (collision.CompareTag("ClearPortal"))
+        {
+            GameManager.Instance.StageClear();
+        }
+
+        if (collision.CompareTag("Fall"))
+        {
+            Respawn();
         }
 
         if (collision.CompareTag("BRB"))
