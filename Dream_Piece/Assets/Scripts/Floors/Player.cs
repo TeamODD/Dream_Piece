@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     //
 
     bool isBouncing = false;
-    float bounceCooldown = 0.5f;
+    float bounceCooldown = 1f;
 
     float vx = 0;
     Rigidbody2D rid;
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
         rid.AddForce(dir * bounceForce, ForceMode2D.Impulse);
 
         isBouncing = true;
-        bounceCooldown = 0.5f;
+        bounceCooldown = 1f;
     }
 
     void Respawn()
