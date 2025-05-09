@@ -2,6 +2,9 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+// Coroutine
+using System.Collections;
+//
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +30,11 @@ public class Player : MonoBehaviour
     private float bounceForce = 8f;
     [SerializeField]
     Transform RespawnTransform;
+    // Below Jump Value
+    [SerializeField]
+    private string platformLayerName = "Platform";
+    private bool isDropping = false;
+    //
 
     bool isBouncing = false;
     float bounceCooldown = 0.5f;
@@ -59,7 +67,13 @@ public class Player : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         vx = rid.linearVelocity.x;
 
-        if (Input.GetButtonDown("Jump") && grounded)
+        // Below Jump Check
+        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
+        {
+            StartCoroutine(DropThroughPlatform());
+        }
+        //
+        else if (Input.GetButtonDown("Jump") && grounded)
         {
             vy = JumpSpeed;
         }
@@ -84,6 +98,22 @@ public class Player : MonoBehaviour
       
         rid.linearVelocity = new Vector2(vx, vy);
     }
+
+    // Platform Drop Coroutine
+    IEnumerator DropThroughPlatform()
+    {
+        isDropping = true;
+        int playerLayer = gameObject.layer;
+        int platformLayer = LayerMask.NameToLayer(platformLayerName);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
+        isDropping = false;
+    }
+    //
 
     void BounceInDirection(Vector2 dir)
     {
