@@ -36,12 +36,14 @@ public class GameManager : MonoBehaviour
     public void AddDreamPiece()
     {
         DreamPiece++;
+        Debug.Log(DreamPiece);
     }
 
     public void StageClear()
     {
-        if(SceneManager.GetActiveScene().name == "Stage1Scene" && DreamPiece == DreamPiece1)
+        if(SceneManager.GetActiveScene().name == "Stage1Scene" && DreamPiece >= DreamPiece1)
         {
+            Debug.Log("Á¶°Ç¿Ï");
             SceneManager.LoadScene("Stage2Scene");
         }
         else if (SceneManager.GetActiveScene().name == "Stage2Scene" && DreamPiece == DreamPiece2)
