@@ -71,6 +71,46 @@ void Update()
                     isBouncing = false;
                 }
                 return;
+                isBouncing = false;
+            }
+            return;
+        }
+
+        float vy = rid.linearVelocityY;
+        float inputX = Input.GetAxisRaw("Horizontal");
+        vx = rid.linearVelocity.x;
+
+        // Left Right Check
+        if (inputX != 0)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(inputX) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }   
+        // Below Jump Check
+        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
+        {
+            StartCoroutine(DropThroughPlatform());
+        }
+        //
+        else if (Input.GetButtonDown("Jump") && grounded)
+        {
+            vy = JumpSpeed;
+        }
+
+        if (!isOnIce)
+        {
+            vx = inputX * Speed;
+        }
+        else if(isOnIce)
+        {
+            if (Mathf.Abs(vx) < 0.1f)
+            {
+                vx += inputX * (iceAcceleration + 5f) * Time.deltaTime;
+            }
+            else
+            {
+                vx += inputX * iceAcceleration * Time.deltaTime;
             }
 
             
@@ -125,7 +165,7 @@ void Update()
 
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
 
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
         isDropping = false;
