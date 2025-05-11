@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.Instance.DreamPiece = 0;
         rid = GetComponent<Rigidbody2D>();
         currentSpeed = Speed;
     }
@@ -126,9 +127,16 @@ public class Player : MonoBehaviour
         bounceCooldown = 1f;
     }
 
-    void Respawn()
+    public void Respawn()
     {
        gameObject.transform.position = RespawnTransform.position;
+    }
+
+    public void ReStart()
+    {
+        Time.timeScale = 1f;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
 

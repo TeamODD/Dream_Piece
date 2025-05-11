@@ -1,4 +1,3 @@
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,13 +6,18 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     //public Player player;
-    private int DreamPiece = 0;
+    public int DreamPiece = 0;
     [SerializeField]
     private int DreamPiece1 = 10;
     [SerializeField]
     private int DreamPiece2 = 10;
     [SerializeField]
     private int DreamPiece3 = 10;
+
+    public int clearStage;
+    private bool hasCleared1 = false;
+    private bool hasCleared2 = false;
+    private bool hasCleared3 = false;
 
     void Awake()
     {
@@ -41,23 +45,30 @@ public class GameManager : MonoBehaviour
 
     public void StageClear()
     {
-        if(SceneManager.GetActiveScene().name == "Stage1Scene" && DreamPiece >= DreamPiece1)
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "Stage1Scene" && DreamPiece >= DreamPiece1)
         {
-            Debug.Log("Á¶°Ç¿Ï");
-            SceneManager.LoadScene("Stage2Scene");
+            SaveClearStage(1);
         }
-        else if (SceneManager.GetActiveScene().name == "Stage2Scene" && DreamPiece == DreamPiece2)
+        else if (currentScene == "Stage2Scene" && DreamPiece >= DreamPiece2)
         {
-            SceneManager.LoadScene("Stage3Scene");
+            SaveClearStage(2);
         }
-        else if (SceneManager.GetActiveScene().name == "Stage3Scene" && DreamPiece == DreamPiece3)
+        else if (currentScene == "Stage3Scene" && DreamPiece >= DreamPiece3)
         {
-            SceneManager.LoadScene("ClearScene");
+            SceneManager.LoadScene("EndingScene");
         }
-        else
+    }
+
+    void SaveClearStage(int stage)
+    {
+        int saved = PlayerPrefs.GetInt("ClearStage", 0);
+        if (saved < stage)
         {
-            
-            return;
+            PlayerPrefs.SetInt("ClearStage", stage);
+            PlayerPrefs.Save();
         }
+        SceneManager.LoadScene("StageSelect");
     }
 }

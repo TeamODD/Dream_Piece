@@ -8,11 +8,13 @@ public class Timer : MonoBehaviour
     public float maxTime = 20f;
     float timeLeft;
     public GameObject TimesUpText;
+    public GameObject FailPanel;
 
 
     void Start()
     {
         TimesUpText.SetActive(false);
+        FailPanel.SetActive(false);
         timerBar = GetComponent<Image>();
         timeLeft = maxTime;
     }
@@ -28,6 +30,7 @@ public class Timer : MonoBehaviour
         {
             TimesUpText.SetActive(true);
             Time.timeScale = 0;
+            FailPanel.SetActive(true);
             // Add any additional logic for when the timer runs out
         }
 
