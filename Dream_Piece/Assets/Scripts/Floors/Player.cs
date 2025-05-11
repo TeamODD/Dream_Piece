@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private string platformLayerName = "Platform";
     private bool isDropping = false;
+    // Animation Control Value
+    private PlayerAnima animaController;
     //
 
     bool isBouncing = false;
@@ -47,10 +49,14 @@ public class Player : MonoBehaviour
     {
         rid = GetComponent<Rigidbody2D>();
         currentSpeed = Speed;
+
+        // Animation Control Value
+        animaController = GetComponent<PlayerAnima>();
+        //
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
         if (isBouncing)
         {
@@ -97,6 +103,10 @@ public class Player : MonoBehaviour
         }
       
         rid.linearVelocity = new Vector2(vx, vy);
+
+        // Animation Update
+        animaController.UpdateAnimation(inputX, grounded);
+        //
     }
 
     // Platform Drop Coroutine
@@ -121,6 +131,10 @@ public class Player : MonoBehaviour
 
         rid.linearVelocity = Vector2.zero;
         rid.AddForce(dir * bounceForce, ForceMode2D.Impulse);
+
+        // Bounce Animation
+        animaController.PlayBounce();
+        //
 
         isBouncing = true;
         bounceCooldown = 1f;
