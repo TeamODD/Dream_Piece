@@ -69,11 +69,17 @@ void Update()
             return;
         }
 
-
         float vy = rid.linearVelocityY;
         float inputX = Input.GetAxisRaw("Horizontal");
         vx = rid.linearVelocity.x;
 
+        // Left Right Check
+        if (inputX != 0)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(inputX) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
+        }   
         // Below Jump Check
         if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
         {
@@ -119,7 +125,7 @@ void Update()
 
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
 
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
         isDropping = false;
