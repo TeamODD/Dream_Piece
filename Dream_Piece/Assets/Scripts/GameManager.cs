@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -43,10 +44,10 @@ public class GameManager : MonoBehaviour
         Debug.Log(DreamPiece);
     }
 
-    public void StageClear()
+    public IEnumerator StageClear()
     {
+        yield return new WaitForSeconds(2f);
         string currentScene = SceneManager.GetActiveScene().name;
-
         if (currentScene == "Stage1Scene" && DreamPiece >= DreamPiece1)
         {
             SaveClearStage(1);
@@ -59,6 +60,11 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("EndingScene");
         }
+    }
+
+    public void StartStageClear()
+    {
+        StartCoroutine(StageClear());
     }
 
     void SaveClearStage(int stage)

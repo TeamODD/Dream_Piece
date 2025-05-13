@@ -147,8 +147,9 @@ void Update()
         bounceCooldown = 1f;
     }
 
-    public void Respawn()
+    public IEnumerator Respawn()
     {
+        yield return new WaitForSeconds(1f);
        gameObject.transform.position = RespawnTransform.position;
     }
 
@@ -172,14 +173,14 @@ void Update()
             GameManager.Instance.AddDreamPiece();
         }
 
-        if (collision.CompareTag("ClearPortal"))
+        if (collision.CompareTag("ClearPortal") && grounded)
         {
-            GameManager.Instance.StageClear();
+            GameManager.Instance.StartStageClear();
         }
 
         if (collision.CompareTag("Fall"))
         {
-            Respawn();
+            StartCoroutine(Respawn());
         }
 
         if (collision.CompareTag("BRB"))
