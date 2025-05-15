@@ -820,6 +820,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 209.86884
@@ -860,6 +864,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (8)
@@ -1218,6 +1230,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 112.90884
@@ -1258,6 +1274,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (4)
@@ -1500,6 +1524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 107.80884
@@ -1540,6 +1568,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (3)
@@ -1898,6 +1934,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 281.54886
@@ -1938,6 +1978,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (13)
@@ -2531,6 +2579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 286.29886
@@ -2571,6 +2623,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (12)
@@ -3425,6 +3485,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 231.16884
@@ -3465,6 +3529,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (9)
@@ -3548,6 +3620,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -114.93116
@@ -3588,6 +3664,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig
@@ -3610,6 +3694,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 102.95884
@@ -3650,6 +3738,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (2)
@@ -3667,6 +3763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 240.86884
@@ -3707,6 +3807,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (10)
@@ -4015,6 +4123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 139.96884
@@ -4055,6 +4167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (5)
@@ -5006,6 +5126,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 150.96884
@@ -5046,6 +5170,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (7)
@@ -5546,6 +5678,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 145.56883
@@ -5586,6 +5722,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (6)
@@ -5603,6 +5747,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 98.06884
@@ -5643,6 +5791,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (1)
@@ -5660,6 +5816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 295.96
@@ -5700,6 +5860,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig
@@ -6093,6 +6261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.668841
@@ -6133,6 +6305,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (2)
@@ -6155,6 +6335,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.60884
@@ -6195,6 +6379,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (3)
@@ -6292,6 +6484,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -92.631165
@@ -6332,6 +6528,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (1)
@@ -9168,6 +9372,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 290.63885
@@ -9208,6 +9416,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (11)
@@ -9942,6 +10158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068976602}
     m_Modifications:
+    - target: {fileID: 1443253817626559715, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 98.06884
@@ -9982,6 +10202,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5314109199700573319, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
+    - target: {fileID: 5995103381020467853, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6593594910248241911, guid: f4738ac713a113149861169b54c76f18, type: 3}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig
