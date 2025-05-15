@@ -3,23 +3,19 @@ using UnityEngine;
 
 public class CameraFinder : MonoBehaviour
 {
-    public CinemachineCamera CinCamera;
     public Transform target;
-    public float yThreshold = -5f;
+    public float fixedY = 5f;
+    public float fixedZ = -10f; // 보통 카메라는 Z를 -10에 둠
+    public float fixedTarget;
 
-    private bool isFollowing = true;
-
-    void Update()
+    void LateUpdate()
     {
-        if (target.position.y < yThreshold && isFollowing)
-        {
-            CinCamera.Follow = null;
-            isFollowing = false;
-        }
-        else if (target.position.y >= yThreshold && !isFollowing)
-        {
-            CinCamera.Follow = target;
-            isFollowing = true;
-        }
+        if (target == null) return;
+
+        transform.position = new Vector3(
+            target.position.x + fixedTarget,
+            fixedY,
+            fixedZ
+        );
     }
 }

@@ -15,12 +15,15 @@ public class GameManagerSub : MonoBehaviour
     [Header("Audio Mixer")]
     public AudioMixer mainMixer;
 
+    public bool isGrounded = true; // 바닥에 있을 때만 사운드 재생
+
+    private bool isRunningSoundPlaying = false;
+
     void Start()
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
 
-        // 슬라이더 초기화
         float bgmVol = PlayerPrefs.GetFloat("BGMVolume", 0.75f);
         float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
 
@@ -32,23 +35,62 @@ public class GameManagerSub : MonoBehaviour
 
         bgmSlider.onValueChanged.AddListener(SetBGMVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "Stage1Scene")
+        {
+            SoundManager.Instance.PlayBGM("Stage1BGM");
+        }
+        else if (currentSceneName == "Stage2Scene")
+        {
+            SoundManager.Instance.PlayBGM("Stage2BGM");
+        }
+        else if (currentSceneName == "Stage3Scene")
+        {
+            SoundManager.Instance.PlayBGM("Stage3BGM");
+        }
     }
 
     void Update()
     {
+        // ESC 눌렀을 때
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SoundManager.instance.PlaySFX(SoundManager.instance.escClip);
+            SoundManager.Instance.PlaySFX("escClip");
 
             if (!isPaused)
                 PauseGame();
             else
                 ResumeGame();
         }
+
+        // 점프 키 (예: 스페이스)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SoundManager.Instance.PlaySFX("jumpClip");
+        }
+
+        // ▶ A, D 걷기 사운드 (길게 재생)
+        if (isGrounded && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
+        {
+            if (!isRunningSoundPlaying)
+            {
+                SoundManager.Instance.PlayRunLoop();
+                isRunningSoundPlaying = true;
+            }
+        }
+
+        // ▶ 키에서 손 뗐을 때 정지
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            SoundManager.Instance.StopRunLoop();
+            isRunningSoundPlaying = false;
+        }
     }
 
     void PauseGame()
     {
+
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -59,7 +101,8 @@ public class GameManagerSub : MonoBehaviour
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        SoundManager.instance.PlaySFX(SoundManager.instance.buttonClip);    
+
+        SoundManager.Instance.PlaySFX("buttonClip");
     }
 
     public void GoToMainMenu()
