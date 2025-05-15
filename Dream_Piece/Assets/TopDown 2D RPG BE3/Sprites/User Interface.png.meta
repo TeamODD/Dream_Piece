@@ -182,7 +182,7 @@ TextureImporter:
       name: User Interface_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 25
         width: 32
         height: 32
@@ -204,7 +204,7 @@ TextureImporter:
       name: User Interface_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 25
         width: 32
         height: 32
@@ -218,6 +218,138 @@ TextureImporter:
       bones: []
       spriteID: 679f61b15b963a14ab0b51ff4b3c15a2
       internalID: -1404620219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 25
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b6cb87d82ffa343b6b1fa3263b14c5
+      internalID: 1134682732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd142edefbee0574897da2d9e70b5005
+      internalID: 633809386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface_5
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1412bd075cea447b0a72792c4391cf
+      internalID: 1655254921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077edacc33fc7be40a3365b2f1642a2c
+      internalID: 123667524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface_7
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6973a622a46e284fa330c9a4890096a
+      internalID: 18572427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8565c7359e86c474288017a588f05b1d
+      internalID: -1289808165
       vertices: []
       indices: 
       edges: []
@@ -239,6 +371,12 @@ TextureImporter:
       User Interface_0: 1092783129
       User Interface_1: -1864567251
       User Interface_2: -1404620219
+      User Interface_3: 1134682732
+      User Interface_4: 633809386
+      User Interface_5: 1655254921
+      User Interface_6: 123667524
+      User Interface_7: 18572427
+      User Interface_8: -1289808165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

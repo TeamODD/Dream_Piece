@@ -2,6 +2,9 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+// Coroutine
+using System.Collections;
+//
 
 public class Player : MonoBehaviour
 {
@@ -12,7 +15,7 @@ public class Player : MonoBehaviour
     //public float BounceForce = 2f;
     private bool grounded = false;
     bool isJumping = false;
-    private bool canMove = true;
+    public bool canMove = true;
     public bool isOnIce = false;
    
     [SerializeField] 
@@ -27,63 +30,106 @@ public class Player : MonoBehaviour
     private float bounceForce = 8f;
     [SerializeField]
     Transform RespawnTransform;
+    // Below Jump Value
+    [SerializeField]
+    private string platformLayerName = "Platform";
+    private bool isDropping = false;
+    // Animation Control Value
+    private PlayerAnima animaController;
+    //
 
     bool isBouncing = false;
-    float bounceCooldown = 0.5f;
+    float bounceCooldown = 1f;
 
     float vx = 0;
     Rigidbody2D rid;
+
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.Instance.DreamPiece = 0;
         rid = GetComponent<Rigidbody2D>();
         currentSpeed = Speed;
+
+        // Animation Control Value
+        animaController = GetComponent<PlayerAnima>();
+        //
+        canMove = true;
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
-        if (isBouncing)
+        if (canMove)
         {
-            bounceCooldown -= Time.deltaTime;
-            if (bounceCooldown <= 0)
+            if (isBouncing)
             {
-                isBouncing = false;
-            }
-            return;
-        }
-
-
-        float vy = rid.linearVelocityY;
-        float inputX = Input.GetAxisRaw("Horizontal");
-        vx = rid.linearVelocity.x;
-
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            vy = JumpSpeed;
-        }
-
-        if (!isOnIce)
-        {
-            vx = inputX * Speed;
-        }
-        else if(isOnIce)
-        {
-            if (Mathf.Abs(vx) < 0.1f)
-            {
-                vx += inputX * (iceAcceleration + 5f) * Time.deltaTime;
-            }
-            else
-            {
-                vx += inputX * iceAcceleration * Time.deltaTime;
+                bounceCooldown -= Time.deltaTime;
+                if (bounceCooldown <= 0)
+                {
+                    isBouncing = false;
+                }
+                return;
             }
 
-            vx = Mathf.Clamp(vx, -maxIceSpeed, maxIceSpeed);
+
+            float vy = rid.linearVelocityY;
+            float inputX = Input.GetAxisRaw("Horizontal");
+            vx = rid.linearVelocity.x;
+
+            // Below Jump Check
+            if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
+            {
+                StartCoroutine(DropThroughPlatform());
+            }
+            //
+            else if (Input.GetButtonDown("Jump") && grounded)
+            {
+                vy = JumpSpeed;
+            }
+
+            if (!isOnIce)
+            {
+                vx = inputX * Speed;
+            }
+            else if (isOnIce)
+            {
+                if (Mathf.Abs(vx) < 0.1f)
+                {
+                    vx += inputX * (iceAcceleration + 5f) * Time.deltaTime;
+                }
+                else
+                {
+                    vx += inputX * iceAcceleration * Time.deltaTime;
+                }
+
+                vx = Mathf.Clamp(vx, -maxIceSpeed, maxIceSpeed);
+            }
+
+            rid.linearVelocity = new Vector2(vx, vy);
+
+            // Animation Update
+            animaController.UpdateAnimation(inputX, grounded);
+            //
         }
-      
-        rid.linearVelocity = new Vector2(vx, vy);
     }
+
+    // Platform Drop Coroutine
+    IEnumerator DropThroughPlatform()
+    {
+        isDropping = true;
+        int playerLayer = gameObject.layer;
+        int platformLayer = LayerMask.NameToLayer(platformLayerName);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
+        isDropping = false;
+    }
+    //
 
     void BounceInDirection(Vector2 dir)
     {
@@ -92,13 +138,25 @@ public class Player : MonoBehaviour
         rid.linearVelocity = Vector2.zero;
         rid.AddForce(dir * bounceForce, ForceMode2D.Impulse);
 
+        // Bounce Animation
+        animaController.PlayBounce();
+        //
+
         isBouncing = true;
-        bounceCooldown = 0.5f;
+        bounceCooldown = 1f;
     }
 
-    void Respawn()
+    public IEnumerator Respawn()
     {
+        yield return new WaitForSeconds(1f);
        gameObject.transform.position = RespawnTransform.position;
+    }
+
+    public void ReStart()
+    {
+        Time.timeScale = 1f;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
 
@@ -114,14 +172,14 @@ public class Player : MonoBehaviour
             GameManager.Instance.AddDreamPiece();
         }
 
-        if (collision.CompareTag("ClearPortal"))
+        if (collision.CompareTag("ClearPortal") && grounded)
         {
-            GameManager.Instance.StageClear();
+            GameManager.Instance.StartStageClear();
         }
 
         if (collision.CompareTag("Fall"))
         {
-            Respawn();
+            StartCoroutine(Respawn());
         }
 
         if (collision.CompareTag("BRB"))
