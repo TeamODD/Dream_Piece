@@ -1,23 +1,45 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class GameManagerSub : MonoBehaviour
 {
-    public GameObject pausePanel;         // 일시정지 UI 패널
-    private bool isPaused = false;        // 일시정지 상태 체크
+    public GameObject pausePanel;
+    private bool isPaused = false;
+
+    [Header("슬라이더")]
+    public Slider bgmSlider;
+    public Slider sfxSlider;
+
+    [Header("Audio Mixer")]
+    public AudioMixer mainMixer;
 
     void Start()
     {
-        pausePanel.SetActive(false);      // 시작할 때 패널 숨기기
-        Time.timeScale = 1f;             // 게임 시간 정상화
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+
+        // 슬라이더 초기화
+        float bgmVol = PlayerPrefs.GetFloat("BGMVolume", 0.75f);
+        float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+
+        bgmSlider.value = bgmVol;
+        sfxSlider.value = sfxVol;
+
+        SetBGMVolume(bgmVol);
+        SetSFXVolume(sfxVol);
+
+        bgmSlider.onValueChanged.AddListener(SetBGMVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
 
     void Update()
     {
-        // ESC 키 입력 감지
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            SoundManager.instance.PlaySFX(SoundManager.instance.escClip);
+
             if (!isPaused)
                 PauseGame();
             else
@@ -27,29 +49,42 @@ public class GameManagerSub : MonoBehaviour
 
     void PauseGame()
     {
-        pausePanel.SetActive(true);       // 일시정지 메뉴 표시
-        Time.timeScale = 0f;             // 게임 시간 정지
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
         isPaused = true;
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false);      // 일시정지 메뉴 숨기기
-        Time.timeScale = 1f;             // 게임 시간 재개
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
         isPaused = false;
+        SoundManager.instance.PlaySFX(SoundManager.instance.buttonClip);    
     }
 
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f;             // 게임 시간 정상화
-        SceneManager.LoadScene("MainMenu"); // 메인 메뉴 씬으로 이동
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
     {
-        Application.Quit();              // 게임 종료
+        Application.Quit();
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;  // 에디터에서 실행 중지
+        UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    public void SetBGMVolume(float value)
+    {
+        mainMixer.SetFloat("BGM", Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat("BGMVolume", value);
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        mainMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", value);
     }
 }

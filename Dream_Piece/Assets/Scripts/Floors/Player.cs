@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private string platformLayerName = "Platform";
     private bool isDropping = false;
+    // Animation Control Value
+    private PlayerAnima animaController;
     //
 
     bool isBouncing = false;
@@ -45,12 +47,17 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.Instance.DreamPiece = 0;
         rid = GetComponent<Rigidbody2D>();
         currentSpeed = Speed;
+
+        // Animation Control Value
+        animaController = GetComponent<PlayerAnima>();
+        //
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
         if (isBouncing)
         {
@@ -97,6 +104,10 @@ public class Player : MonoBehaviour
         }
       
         rid.linearVelocity = new Vector2(vx, vy);
+
+        // Animation Update
+        animaController.UpdateAnimation(inputX, grounded);
+        //
     }
 
     // Platform Drop Coroutine
@@ -122,13 +133,25 @@ public class Player : MonoBehaviour
         rid.linearVelocity = Vector2.zero;
         rid.AddForce(dir * bounceForce, ForceMode2D.Impulse);
 
+        // Bounce Animation
+        animaController.PlayBounce();
+        //
+
         isBouncing = true;
         bounceCooldown = 1f;
     }
 
-    void Respawn()
+    public IEnumerator Respawn()
     {
+        yield return new WaitForSeconds(1f);
        gameObject.transform.position = RespawnTransform.position;
+    }
+
+    public void ReStart()
+    {
+        Time.timeScale = 1f;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
 
@@ -144,14 +167,14 @@ public class Player : MonoBehaviour
             GameManager.Instance.AddDreamPiece();
         }
 
-        if (collision.CompareTag("ClearPortal"))
+        if (collision.CompareTag("ClearPortal") && grounded)
         {
-            GameManager.Instance.StageClear();
+            GameManager.Instance.StartStageClear();
         }
 
         if (collision.CompareTag("Fall"))
         {
-            Respawn();
+            StartCoroutine(Respawn());
         }
 
         if (collision.CompareTag("BRB"))
