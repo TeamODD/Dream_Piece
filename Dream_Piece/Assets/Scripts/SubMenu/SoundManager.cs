@@ -20,8 +20,8 @@ public class SoundManager : MonoBehaviour
 
     private Dictionary<string, AudioClip> sfxDict = new();
 
-
     public static SoundManager Instance { get; private set; }
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -45,9 +45,10 @@ public class SoundManager : MonoBehaviour
             bgmDict[clip.name] = clip;
         }
     }
+
     void Start()
     {
-        
+
     }
 
     public void PlaySFX(string name)
@@ -81,5 +82,24 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    // ✅ 추가: 걷기 효과음 루프 전용 함수
+    public void PlayRunLoop()
+    {
+        if (sfxDict.TryGetValue("runClip", out var clip))
+        {
+            sfxSource.clip = clip;
+            sfxSource.loop = true;
+            sfxSource.Play();
+        }
+    }
 
+    public void StopRunLoop()
+    {
+        if (sfxSource.clip != null && sfxSource.clip.name == "runClip")
+        {
+            sfxSource.Stop();
+            sfxSource.loop = false;
+            sfxSource.clip = null;
+        }
+    }
 }
