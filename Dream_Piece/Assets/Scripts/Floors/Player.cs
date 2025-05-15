@@ -62,8 +62,8 @@ public class Player : MonoBehaviour
         canMove = true;
     }
 
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (canMove)
         {
@@ -75,53 +75,20 @@ void Update()
                     isBouncing = false;
                 }
                 return;
-                isBouncing = false;
-            }
-            return;
-        }
-
-        float vy = rid.linearVelocityY;
-        float inputX = Input.GetAxisRaw("Horizontal");
-        vx = rid.linearVelocity.x;
-
-        // Left Right Check
-        if (inputX != 0)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Sign(inputX) * Mathf.Abs(scale.x);
-            transform.localScale = scale;
-        }   
-        // Below Jump Check
-        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
-        {
-            StartCoroutine(DropThroughPlatform());
-        }
-        //
-        else if (Input.GetButtonDown("Jump") && grounded)
-        {
-            vy = JumpSpeed;
-        }
-
-        if (!isOnIce)
-        {
-            vx = inputX * Speed;
-        }
-        else if(isOnIce)
-        {
-            if (Mathf.Abs(vx) < 0.1f)
-            {
-                vx += inputX * (iceAcceleration + 5f) * Time.deltaTime;
-            }
-            else
-            {
-                vx += inputX * iceAcceleration * Time.deltaTime;
             }
 
-            
+
             float vy = rid.linearVelocityY;
             float inputX = Input.GetAxisRaw("Horizontal");
             vx = rid.linearVelocity.x;
 
+            // Left Right Check
+            if (inputX != 0)
+            {
+                Vector3 scale = transform.localScale;
+                scale.x = Mathf.Sign(inputX) * Mathf.Abs(scale.x);
+                transform.localScale = scale;
+            }
             // Below Jump Check
             if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
             {
@@ -131,7 +98,6 @@ void Update()
             else if (Input.GetButtonDown("Jump") && grounded)
             {
                 vy = JumpSpeed;
-                SoundManager.Instance.PlaySFX("jumpClip");
             }
 
             if (!isOnIce)
@@ -149,9 +115,36 @@ void Update()
                     vx += inputX * iceAcceleration * Time.deltaTime;
                 }
 
-                vx = Mathf.Clamp(vx, -maxIceSpeed, maxIceSpeed);
-            }
+                // Below Jump Check
+                if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
+                {
+                    StartCoroutine(DropThroughPlatform());
+                }
+                //
+                else if (Input.GetButtonDown("Jump") && grounded)
+                {
+                    vy = JumpSpeed;
+                    SoundManager.Instance.PlaySFX("jumpClip");
+                }
 
+                if (!isOnIce)
+                {
+                    vx = inputX * Speed;
+                }
+                else if (isOnIce)
+                {
+                    if (Mathf.Abs(vx) < 0.1f)
+                    {
+                        vx += inputX * (iceAcceleration + 5f) * Time.deltaTime;
+                    }
+                    else
+                    {
+                        vx += inputX * iceAcceleration * Time.deltaTime;
+                    }
+
+                    vx = Mathf.Clamp(vx, -maxIceSpeed, maxIceSpeed);
+                }
+            }
             rid.linearVelocity = new Vector2(vx, vy);
 
             // Animation Update

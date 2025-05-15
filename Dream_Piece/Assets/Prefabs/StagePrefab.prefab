@@ -333,6 +333,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4435020402271928551, guid: 47b52c23805a5d4469aa3f52b2991557, type: 3}
+      propertyPath: DeathAnimation
+      value: 
+      objectReference: {fileID: 4825782252152220475, guid: d809c2f3c92749441b5e14170c259880, type: 3}
+    - target: {fileID: 4435020402271928551, guid: 47b52c23805a5d4469aa3f52b2991557, type: 3}
       propertyPath: RespawnTransform
       value: 
       objectReference: {fileID: 311851613696963671}
