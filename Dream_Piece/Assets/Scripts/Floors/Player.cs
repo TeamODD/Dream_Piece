@@ -73,7 +73,7 @@ void Update()
                 return;
             }
 
-
+            
             float vy = rid.linearVelocityY;
             float inputX = Input.GetAxisRaw("Horizontal");
             vx = rid.linearVelocity.x;
