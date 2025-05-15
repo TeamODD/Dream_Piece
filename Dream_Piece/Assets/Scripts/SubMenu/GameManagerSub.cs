@@ -32,13 +32,19 @@ public class GameManagerSub : MonoBehaviour
 
         bgmSlider.onValueChanged.AddListener(SetBGMVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if(currentSceneName == "Stage1Scene")
+        {
+            SoundManager.Instance.PlayBGM("Stage1BGM");
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SoundManager.instance.PlaySFX(SoundManager.instance.escClip);
+            //SoundManager.instance.PlaySFX(SoundManager.instance.escClip);
 
             if (!isPaused)
                 PauseGame();
@@ -59,7 +65,7 @@ public class GameManagerSub : MonoBehaviour
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        SoundManager.instance.PlaySFX(SoundManager.instance.buttonClip);    
+        //SoundManager.instance.PlaySFX(SoundManager.instance.buttonClip);    
     }
 
     public void GoToMainMenu()

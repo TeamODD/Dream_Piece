@@ -21,7 +21,7 @@ AudioMixerController:
   - guid: 481dc20fccc335942a58b8e4ca4d4b25
     name: BGM
   - guid: 18b9fc2cb0b03c44ba8321f77387eaa2
-    name: MyExposedParam 2
+    name: Master
   m_AudioMixerGroupViews:
   - guids:
     - 7c0ba6f430683cb40b456d4614f888d3
@@ -75,7 +75,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 8bcfcc4ee0a80394a9918e097374bce2
   m_FloatValues:
-    481dc20fccc335942a58b8e4ca4d4b25: -19.8
+    481dc20fccc335942a58b8e4ca4d4b25: -0.0018175112
   m_TransitionOverrides: {}
 --- !u!243 &152257868966685107
 AudioMixerGroupController:

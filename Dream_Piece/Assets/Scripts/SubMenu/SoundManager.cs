@@ -1,71 +1,85 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager instance;
+    public AudioMixer audioMixer;
 
-    [Header("SFX")]
-    public AudioSource sfxSource;
-    public AudioClip jumpClip;
-    public AudioClip buttonClip;
-    public AudioClip escClip;
-    public AudioClip runClip;
-
-    [Header("BGM")]
     public AudioSource bgmSource;
-    public List<AudioClip> bgmList = new();  // 0~5 인덱스별 BGM 저장
+    public AudioSource sfxSource;
 
+    [SerializeField]
+    private List<AudioClip> bgmClips;
+
+    private Dictionary<string, AudioClip> bgmDict = new();
+
+    [SerializeField]
+    private List<AudioClip> sfxClips;
+
+    private Dictionary<string, AudioClip> sfxDict = new();
+
+
+    public static SoundManager Instance { get; private set; }
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
-    }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
+        foreach (var clip in sfxClips)
+        {
+            sfxDict[clip.name] = clip;
+        }
+
+        foreach (var clip in bgmClips)
+        {
+            Debug.Log($"[BGM Init] Clip name = {clip.name}");
+            bgmDict[clip.name] = clip;
+        }
+    }
     void Start()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        PlaySceneBGM(SceneManager.GetActiveScene().name);  // ✅ 씬 이름 기준 BGM 재생
+        
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void PlaySFX(string name)
     {
-        PlaySceneBGM(scene.name);
-    }
-
-    void PlaySceneBGM(string sceneName)
-    {
-        bgmSource.Stop();
-
-        int index = sceneName switch
+        if (sfxDict.TryGetValue(name, out var clip))
         {
-            "MainMenu" => 0,
-            "StageSelect" => 1,
-            "Stage1Scene" => 2,
-            "Stage2Scene" => 3,
-            "Stage3Scene" => 4,
-            "EndingScene" => 5,
-            _ => -1,
-        };
-
-        if (index >= 0 && index < bgmList.Count && bgmList[index] != null)
-        {
-            bgmSource.clip = bgmList[index];
-            bgmSource.loop = true;
-            bgmSource.Play();
+            sfxSource.PlayOneShot(clip);
         }
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlayBGM(string name, bool loop = true)
     {
-        sfxSource.PlayOneShot(clip);
+        Debug.Log($"[PlayBGM] 호출됨: {name}");
+
+        if (bgmDict == null || bgmDict.Count == 0)
+        {
+            Debug.LogWarning("[PlayBGM] bgmDict가 비어 있음");
+            return;
+        }
+
+        if (bgmDict.TryGetValue(name, out var clip))
+        {
+            Debug.Log($"[PlayBGM] 클립 '{name}' 재생 시작");
+            bgmSource.clip = clip;
+            bgmSource.loop = loop;
+            bgmSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning($"[PlayBGM] 클립 '{name}'을 bgmDict에서 찾지 못함");
+        }
     }
+
+
 }

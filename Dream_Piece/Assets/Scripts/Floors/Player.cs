@@ -87,6 +87,7 @@ void Update()
             else if (Input.GetButtonDown("Jump") && grounded)
             {
                 vy = JumpSpeed;
+                SoundManager.Instance.PlaySFX("jumpClip");
             }
 
             if (!isOnIce)
