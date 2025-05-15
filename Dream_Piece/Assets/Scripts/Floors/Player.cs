@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     private GameObject DeathAnimation;
     private bool isDead = false;
     //
+    public GameObject Death;
 
     bool isBouncing = false;
     float bounceCooldown = 1f;
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour
         animaController = GetComponent<PlayerAnima>();
         //
         canMove = true;
+        Death.SetActive(false);
     }
 
     // Update is called once per frame
@@ -190,7 +192,7 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         gameObject.transform.position = RespawnTransform.position;
-        // ³«»ç = false, ¿òÁ÷ÀÓ°¡´É = true
+        // ï¿½ï¿½ï¿½ï¿½ = false, ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ = true
         isDead = false;
         canMove = true;
         //
@@ -223,14 +225,15 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Fall") && !isDead)
         {
-            // ³«»ç = true, ¿òÁ÷ÀÓ°¡´É = false
+            // ï¿½ï¿½ï¿½ï¿½ = true, ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ = false
             isDead = true;
             canMove = false;
-            // ³«»ç ½ÃÁ¡¿¡´Â ¿òÁ÷ÀÓ °ªÀ» 0À¸·Î ¼³Á¤ÇÑ´Ù.
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
             rid.linearVelocity = Vector2.zero;
             if (isDead)
             Instantiate(DeathAnimation, transform.position, Quaternion.identity);
             //
+            Death.SetActive(true);
             StartCoroutine(Respawn());
         }
 
