@@ -20,16 +20,23 @@ public class PlayerAnima : MonoBehaviour
     {
         bool isWalking = Mathf.Abs(inputX) > 0.1f && grounded;
         bool isJumping = !grounded && rid.linearVelocity.y > 0.1f;
+        bool isMoving = Mathf.Abs(inputX) > 0.1f;
 
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isGrounded", grounded);
         animator.SetBool("isJumping", isJumping);
         animator.SetFloat("yVelocity", rid.linearVelocity.y);
+        animator.SetBool("isMoving", isMoving);
     }
 
     // Bounce Check
     public void PlayBounce()
     {
         animator.SetTrigger("isBounced");
+    }
+
+    public void PlayDeath()
+    {
+        animator.SetTrigger("isDead");
     }
 }

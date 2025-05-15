@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 // Coroutine
 using System.Collections;
+using UnityEngine.Lumin;
 //
 
 public class Player : MonoBehaviour
@@ -36,6 +37,9 @@ public class Player : MonoBehaviour
     private bool isDropping = false;
     // Animation Control Value
     private PlayerAnima animaController;
+    [SerializeField]
+    private GameObject DeathAnimation;
+    private bool isDead = false;
     //
 
     bool isBouncing = false;
@@ -190,7 +194,8 @@ void Update()
     public IEnumerator Respawn()
     {
         yield return new WaitForSeconds(1f);
-       gameObject.transform.position = RespawnTransform.position;
+        gameObject.transform.position = RespawnTransform.position;
+        isDead = false;
     }
 
     public void ReStart()
@@ -218,8 +223,12 @@ void Update()
             GameManager.Instance.StartStageClear();
         }
 
-        if (collision.CompareTag("Fall"))
+        if (collision.CompareTag("Fall") && !isDead)
         {
+            isDead = true;
+            if (isDead)
+            Instantiate(DeathAnimation, transform.position, Quaternion.identity);
+
             StartCoroutine(Respawn());
         }
 
