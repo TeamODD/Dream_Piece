@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     private GameObject DeathAnimation;
     private bool isDead = false;
     //
+    public GameObject Death;
 
     bool isBouncing = false;
     float bounceCooldown = 1f;
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour
         animaController = GetComponent<PlayerAnima>();
         //
         canMove = true;
+        Death.SetActive(false);
     }
 
     // Update is called once per frame
@@ -221,7 +223,7 @@ public class Player : MonoBehaviour
             isDead = true;
             if (isDead)
             Instantiate(DeathAnimation, transform.position, Quaternion.identity);
-
+            Death.SetActive(true);
             StartCoroutine(Respawn());
         }
 
