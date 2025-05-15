@@ -55,6 +55,7 @@ public class GameManagerSub : MonoBehaviour
 
     void PauseGame()
     {
+
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
