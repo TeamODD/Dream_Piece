@@ -87,14 +87,23 @@ PrefabInstance:
       value: NormalTile (18)
       objectReference: {fileID: 0}
     - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+      propertyPath: m_Size.x
+      value: 2.717289
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
       propertyPath: m_Size.y
-      value: 0.50436866
+      value: 0.37747145
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.07513237
       objectReference: {fileID: 0}
     - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
       propertyPath: m_Offset.y
-      value: 0.018700063
+      value: 0.088656664
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2837250914566876296, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -157,14 +166,24 @@ PrefabInstance:
       value: NormalTile (19)
       objectReference: {fileID: 0}
     - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+      propertyPath: m_Size.x
+      value: 1.152216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
       propertyPath: m_Size.y
-      value: 0.2835214
+      value: 0.15987778
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.031208992
       objectReference: {fileID: 0}
     - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
       propertyPath: m_Offset.y
-      value: -0.09172356
+      value: -0.15354538
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2837250914566876296, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+    - {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -227,14 +246,25 @@ PrefabInstance:
       value: NormalTile (20)
       objectReference: {fileID: 0}
     - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+      propertyPath: m_Size.x
+      value: 1.152214
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
       propertyPath: m_Size.y
-      value: 0.24839771
+      value: 0.027060032
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.050136566
       objectReference: {fileID: 0}
     - target: {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
       propertyPath: m_Offset.y
-      value: -0.109285414
+      value: -0.21995425
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2837250914566876296, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+    - {fileID: 7063198358548832504, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
+    - {fileID: 6875390144115318323, guid: 32f35ec1207678d42ab771774c05cf86, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
