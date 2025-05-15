@@ -570,6 +570,7 @@ MonoBehaviour:
   bgmSlider: {fileID: 2045474627}
   sfxSlider: {fileID: 1481207579}
   mainMixer: {fileID: 24100000, guid: 79c296ef28a8c3f4888917fbaefa6025, type: 2}
+  isGrounded: 1
 --- !u!114 &128660811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,6 +665,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 51690172}
     m_Modifications:
+    - target: {fileID: 238346703487503775, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856512171953640341, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2327203028446582108, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833927719767393249, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4755830092900317990, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1818858
@@ -720,9 +737,33 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.29
       objectReference: {fileID: 0}
+    - target: {fileID: 4934628396701215729, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457529573591872306, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533446203779873669, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
       propertyPath: m_Name
       value: CloudBig (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677714338285409825, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214932420847084943, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075623277444443448, guid: ecdf40b855a986b4d9d279b04a355ef9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6697,6 +6738,10 @@ PrefabInstance:
     - target: {fileID: 8360610566097195846, guid: e05a7ffa2ad7d4d4d95620a93b0c3832, type: 3}
       propertyPath: fixedY
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897288287987902995, guid: e05a7ffa2ad7d4d4d95620a93b0c3832, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

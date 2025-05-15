@@ -39,4 +39,19 @@ public class PlayerAnima : MonoBehaviour
     {
         animator.SetTrigger("isDead");
     }
+
+    public void Play_St12_Clear()
+    {
+        animator.SetTrigger("isClear12");
+    }
+
+    public void Play_St3_Clear()
+    {
+        animator.SetTrigger("isClear3");
+    }
+    public void PlayBelowJump()
+    {
+        animator.SetTrigger("isBelowJump");
+    }
+
 }

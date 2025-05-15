@@ -89,9 +89,10 @@ public class Player : MonoBehaviour
                 scale.x = Mathf.Sign(inputX) * Mathf.Abs(scale.x);
                 transform.localScale = scale;
             }
-            // Below Jump Check
+            // Below Jump Check and Animation
             if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
             {
+                animaController.PlayBelowJump();
                 StartCoroutine(DropThroughPlatform());
             }
             //
@@ -115,9 +116,10 @@ public class Player : MonoBehaviour
                     vx += inputX * iceAcceleration * Time.deltaTime;
                 }
 
-                // Below Jump Check
+                // Below Jump Check and Animation
                 if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
                 {
+                    animaController.PlayBelowJump();
                     StartCoroutine(DropThroughPlatform());
                 }
                 //
@@ -188,7 +190,10 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         gameObject.transform.position = RespawnTransform.position;
+        // 낙사 = false, 움직임가능 = true
         isDead = false;
+        canMove = true;
+        //
     }
 
     public void ReStart()
@@ -218,10 +223,14 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("Fall") && !isDead)
         {
+            // 낙사 = true, 움직임가능 = false
             isDead = true;
+            canMove = false;
+            // 낙사 시점에는 움직임 값을 0으로 설정한다.
+            rid.linearVelocity = Vector2.zero;
             if (isDead)
             Instantiate(DeathAnimation, transform.position, Quaternion.identity);
-
+            //
             StartCoroutine(Respawn());
         }
 

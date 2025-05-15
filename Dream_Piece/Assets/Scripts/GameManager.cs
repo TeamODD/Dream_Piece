@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     private bool hasCleared2 = false;
     private bool hasCleared3 = false;
 
+    //
+    private PlayerAnima animaController;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -46,18 +49,34 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator StageClear()
     {
-        yield return new WaitForSeconds(2f);
+        // Find Animation Controll
+        if (animaController == null)
+        {
+            Player player = Object.FindAnyObjectByType<Player>();
+            if (player != null)
+            {
+                animaController = player.GetComponent<PlayerAnima>();
+            }
+        }
+        //
+
         string currentScene = SceneManager.GetActiveScene().name;
         if (currentScene == "Stage1Scene" && DreamPiece >= DreamPiece1)
         {
+            animaController.Play_St12_Clear();
+            yield return new WaitForSeconds(2f);
             SaveClearStage(1);
         }
         else if (currentScene == "Stage2Scene" && DreamPiece >= DreamPiece2)
         {
+            animaController.Play_St12_Clear();
+            yield return new WaitForSeconds(2f);
             SaveClearStage(2);
         }
         else if (currentScene == "Stage3Scene" && DreamPiece >= DreamPiece3)
         {
+            animaController.Play_St3_Clear();
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("EndingScene");
         }
     }
