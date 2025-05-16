@@ -7,6 +7,7 @@ public class GameManagerSub : MonoBehaviour
 {
     public GameObject pausePanel;
     private bool isPaused = false;
+    public Timer timer;
 
     [Header("슬라이더")]
     public Slider bgmSlider;
@@ -85,10 +86,12 @@ public class GameManagerSub : MonoBehaviour
 
     void PauseGame()
     {
-
-        pausePanel.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        if (!timer.isFail)
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
     }
 
     public void ResumeGame()
@@ -124,5 +127,23 @@ public class GameManagerSub : MonoBehaviour
     {
         mainMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
         PlayerPrefs.SetFloat("SFXVolume", value);
+    }
+
+    public void Again()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "Stage1Scene")
+        {
+            SceneManager.LoadScene("Stage1Scene");
+        }
+        else if (currentSceneName == "Stage2Scene")
+        {
+            SceneManager.LoadScene("Stage2Scene");
+        }
+        else if (currentSceneName == "Stage3Scene")
+        {
+            SceneManager.LoadScene("Stage3Scene");
+        }
     }
 }

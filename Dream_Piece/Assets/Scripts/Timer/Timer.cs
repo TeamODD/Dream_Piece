@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     float timeLeft;
     public GameObject TimesUpText;
     public GameObject FailPanel;
+    public bool isFail = true;
 
 
     void Start()
@@ -17,6 +18,7 @@ public class Timer : MonoBehaviour
         FailPanel.SetActive(false);
         timerBar = GetComponent<Image>();
         timeLeft = maxTime;
+        isFail = false;
     }
 
     void Update()
@@ -31,6 +33,7 @@ public class Timer : MonoBehaviour
             TimesUpText.SetActive(true);
             Time.timeScale = 0;
             FailPanel.SetActive(true);
+            isFail = true;
             // Add any additional logic for when the timer runs out
         }
 
