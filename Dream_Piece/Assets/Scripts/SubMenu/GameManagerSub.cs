@@ -119,13 +119,29 @@ public class GameManagerSub : MonoBehaviour
 
     public void SetBGMVolume(float value)
     {
-        mainMixer.SetFloat("BGM", Mathf.Log10(value) * 20);
+        if (value <= 0.0001f)
+        {
+            mainMixer.SetFloat("BGM", -80f); // 거의 무음
+        }
+        else
+        {
+            mainMixer.SetFloat("BGM", Mathf.Log10(value) * 20);
+        }
+
         PlayerPrefs.SetFloat("BGMVolume", value);
     }
 
     public void SetSFXVolume(float value)
     {
-        mainMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
+        if (value <= 0.0001f)
+        {
+            mainMixer.SetFloat("SFX", -80f); // 거의 무음
+        }
+        else
+        {
+            mainMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
+        }
+
         PlayerPrefs.SetFloat("SFXVolume", value);
     }
 

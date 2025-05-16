@@ -242,9 +242,8 @@ public class Player : MonoBehaviour
             GameManager.Instance.AddDreamPiece();
         }
 
-        if (collision.CompareTag("ClearPortal") && grounded)
+        if (collision.CompareTag("ClearPortal"))
         {
-            Debug.Log("A");
             GameManager.Instance.StartStageClear();
         }
 

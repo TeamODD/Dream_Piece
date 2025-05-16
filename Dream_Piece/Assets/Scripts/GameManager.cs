@@ -41,6 +41,14 @@ public class GameManager : MonoBehaviour
         DreamPiece = 0;
     }
 
+    private void Update()
+    {
+       if(Input.GetKeyDown(KeyCode.V) && Input.GetKeyDown(KeyCode.B))
+        {
+            ResetClearStage();
+        }
+    }
+
     public void AddDreamPiece()
     {
         DreamPiece++;
@@ -95,5 +103,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         SceneManager.LoadScene("StageSelect");
+    }
+
+    public void ResetClearStage()
+    {
+        PlayerPrefs.DeleteKey("ClearStage");
+        PlayerPrefs.Save();
+        clearStage = 0;
+        Debug.Log("클리어 상태 초기화 완료");
     }
 }

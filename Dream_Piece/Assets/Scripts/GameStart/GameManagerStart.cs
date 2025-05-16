@@ -11,9 +11,9 @@ public class MainMenuUI : MonoBehaviour
         SoundManager.Instance.PlayBGM("DefaultBGM");
         HowPanel.SetActive(false);
 
-        float bgmVol = PlayerPrefs.GetFloat("BGMVolume", 0.75f);
-        float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
-        float masterVol = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        float bgmVol = Mathf.Clamp(PlayerPrefs.GetFloat("BGMVolume", 0.75f), 0.0001f, 1f);
+        float sfxVol = Mathf.Clamp(PlayerPrefs.GetFloat("SFXVolume", 0.75f), 0.0001f, 1f);
+        float masterVol = Mathf.Clamp(PlayerPrefs.GetFloat("MasterVolume", 1f), 0.0001f, 1f);
 
         SetMixerVolume("BGM", bgmVol);
         SetMixerVolume("SFX", sfxVol);
