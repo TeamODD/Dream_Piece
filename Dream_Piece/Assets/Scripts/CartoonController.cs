@@ -71,4 +71,9 @@ public class CartoonController : MonoBehaviour
 
         isAutoPlaying = false;
     }
+
+    public void StartScene()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 }
