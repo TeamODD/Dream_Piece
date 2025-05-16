@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
             // Below Jump Check and Animation
             if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) && grounded && !isDropping)
             {
+                SoundManager.Instance.PlaySFX("jumpClip");
                 animaController.PlayBelowJump();
                 StartCoroutine(DropThroughPlatform());
             }
