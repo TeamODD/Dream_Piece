@@ -52,10 +52,12 @@ public class CartoonController : MonoBehaviour
             currentIndex++;
         }
 
-        if (!isAutoPlaying && currentIndex >= stepObjects.Count)
+        if ((!isAutoPlaying && currentIndex >= stepObjects.Count) || Input.GetKey(KeyCode.X))
         {
             SceneManager.LoadScene("StageSelect");
         }
+
+
     }
 
     IEnumerator AutoPlayRange(int start, int count)
@@ -76,4 +78,5 @@ public class CartoonController : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
 }

@@ -43,4 +43,9 @@ public class MainMenuUI : MonoBehaviour
         float db = Mathf.Log10(volume) * 20f;
         SoundManager.Instance.audioMixer.SetFloat(parameter, db);
     }
+
+    public void End()
+    {
+        Application.Quit();
+    }
 }
