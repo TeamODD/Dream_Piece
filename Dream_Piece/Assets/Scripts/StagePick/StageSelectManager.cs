@@ -41,4 +41,9 @@ public class StageSelectManager : MonoBehaviour
         stage2Btn.onClick.AddListener(() => SceneManager.LoadScene("Stage2Scene"));
         stage3Btn.onClick.AddListener(() => SceneManager.LoadScene("Stage3Scene"));
     }
+
+    public void End()
+    {
+        Application.Quit();
+    }
 }

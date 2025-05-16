@@ -19,5 +19,7 @@ public class ShootStop : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }

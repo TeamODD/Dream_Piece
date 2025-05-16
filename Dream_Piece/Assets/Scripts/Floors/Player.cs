@@ -182,7 +182,7 @@ public class Player : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.6f);
 
         Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
         isDropping = false;

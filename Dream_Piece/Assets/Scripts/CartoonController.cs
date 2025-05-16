@@ -27,7 +27,7 @@ public class CartoonController : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         if(currentSceneName == "EndingScene")
         {
-            SoundManager.Instance.PlayBGM("EndingBGM");
+          //  SoundManager.Instance.PlayBGM("EndingBGM");
         }
     }
 
@@ -35,7 +35,7 @@ public class CartoonController : MonoBehaviour
     {
         if (((Input.GetKeyDown(KeyCode.Return) || (Input.GetKeyDown(KeyCode.Space)))) && !isAutoPlaying)
         {
-            SoundManager.Instance.PlaySFX("Book");
+           // SoundManager.Instance.PlaySFX("Book");
             if (currentIndex >= stepObjects.Count)
                 return;
 
