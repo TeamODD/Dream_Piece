@@ -2200,11 +2200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Size.x
-      value: 9.115549
+      value: 1.5223119
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Offset.x
-      value: 3.7744856
+      value: -0.022133231
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Offset.y
@@ -4277,11 +4277,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Size.x
-      value: 9.115549
+      value: 1.5811746
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Offset.x
-      value: 3.7744856
+      value: 0.00729838
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Offset.y
@@ -4329,7 +4329,7 @@ MonoBehaviour:
   player: {fileID: 363837713}
   floatAmplitude: 1
   floatFrequency: 2
-  shootInterval: 3
+  shootInterval: 5
   shootPower: 10
   NMPrefab: {fileID: 1719198688405720261, guid: 99098c3a9aa83ed40b47bf115bef8c1e, type: 3}
 --- !u!212 &549287492
@@ -4539,7 +4539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.90256
+      value: 15.582561
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4601,7 +4601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.1
+      value: 16.78
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4796,7 +4796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.36
+      value: 4.12
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4858,7 +4858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.41
+      value: 6.01
       objectReference: {fileID: 0}
     - target: {fileID: 6099138382861222987, guid: 976369a6c8f392d4da2916f5b1a88387, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5428,7 +5428,7 @@ GameObject:
   - component: {fileID: 721536064}
   m_Layer: 0
   m_Name: SavePoint
-  m_TagString: Monster
+  m_TagString: SavePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5728,6 +5728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1128321258}
     m_Modifications:
+    - target: {fileID: 711374962371063215, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2224230454948168566, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1967
@@ -5772,13 +5776,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3896807131167949993, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896807131467199539, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896807131492845812, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3896807131492845815, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
       propertyPath: m_Intensity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4297409451446334159, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5881546070138035166, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
       propertyPath: m_Name
       value: ClearPortal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881546070138035166, guid: 6997cc1a7356bae4ea42e44d79aeddd4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7982,76 +8006,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1059100577}
-  - component: {fileID: 1059100576}
-  - component: {fileID: 1059100575}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Respawn2
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1059100575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059100574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ad341486d503df4a9d7f9dd5c473da4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 549287490}
-  player: {fileID: 363837714}
-  fadeDuration: 1
---- !u!61 &1059100576
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059100574}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -1.5482483, y: -0.7312825}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 2.295288, y: 1.1510072}
-  m_EdgeRadius: 0
 --- !u!4 &1059100577
 Transform:
   m_ObjectHideFlags: 0
@@ -8109,7 +8070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.32000732}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079304968
@@ -8397,11 +8358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Size.x
-      value: 9.115549
+      value: 1.5223165
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Offset.x
-      value: 3.7744856
+      value: -0.022130698
       objectReference: {fileID: 0}
     - target: {fileID: 4708865125272765801, guid: 9e5bf893e8a45dc459c374d2a722d16f, type: 3}
       propertyPath: m_Offset.y
@@ -10733,7 +10694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990b7c63e1deddd49b7840d5c86c1435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 120
+  maxTime: 250
   TimesUpText: {fileID: 2135487853}
   FailPanel: {fileID: 905426139}
 --- !u!114 &1558545547

@@ -54,7 +54,11 @@ public class CartoonController : MonoBehaviour
 
         if ((!isAutoPlaying && currentIndex >= stepObjects.Count) || Input.GetKey(KeyCode.X))
         {
-            SceneManager.LoadScene("StageSelect");
+            string CurrentScene = SceneManager.GetActiveScene().name;
+            if(CurrentScene == "StartAniScene")
+            {
+                SceneManager.LoadScene("StageSelect");
+            }
         }
 
 

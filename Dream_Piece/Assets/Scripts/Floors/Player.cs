@@ -244,6 +244,7 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("ClearPortal") && grounded)
         {
+            Debug.Log("A");
             GameManager.Instance.StartStageClear();
         }
 
