@@ -157,6 +157,15 @@ public class Player : MonoBehaviour
             }
             rid.linearVelocity = new Vector2(vx, vy);
 
+            // SMH bug fix
+            if (Mathf.Abs(inputX) > 0.1f && grounded)
+            {
+                SoundManager.Instance.PlayRunLoop(grounded); // isGrounded 전달
+            }
+            else
+            {
+                SoundManager.Instance.StopRunLoop(); // 멈추면 중단
+            }
             // Animation Update
             animaController.UpdateAnimation(inputX, grounded);
             //

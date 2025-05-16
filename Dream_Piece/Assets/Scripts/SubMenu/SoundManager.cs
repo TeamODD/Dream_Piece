@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -22,6 +23,19 @@ public class SoundManager : MonoBehaviour
 
     public static SoundManager Instance { get; private set; }
 
+    // SMH bug fix
+    [SerializeField] private int sfxSourcePoolSize = 10;
+    private List<AudioSource> sfxSources = new();
+    private int sfxSourceIndex = 0;
+    /*
+    private Dictionary<string, float> sfxVolumeDict = new()
+{
+    { "Die", 10.0f },
+    { "Item", 10.0f }
+};
+    */
+    // SMH bug fix
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -44,6 +58,15 @@ public class SoundManager : MonoBehaviour
             Debug.Log($"[BGM Init] Clip name = {clip.name}");
             bgmDict[clip.name] = clip;
         }
+
+        // SMH bug fix
+        for (int i = 0; i < sfxSourcePoolSize; i++)
+        {
+            var newSource = gameObject.AddComponent<AudioSource>();
+            newSource.outputAudioMixerGroup = sfxSource.outputAudioMixerGroup;
+            sfxSources.Add(newSource);
+        }
+        // SMH bug fix
     }
 
     void Start()
@@ -55,7 +78,19 @@ public class SoundManager : MonoBehaviour
     {
         if (sfxDict.TryGetValue(name, out var clip))
         {
-            sfxSource.PlayOneShot(clip);
+            // SMH bug fix
+            /*
+            float volume = 1.0f;
+            if (sfxVolumeDict.TryGetValue(name, out var customVolume))
+            {
+                volume = customVolume;
+            }
+            */
+            //sfxSource.PlayOneShot(clip);
+            var source = sfxSources[sfxSourceIndex];
+            source.PlayOneShot(clip);
+            sfxSourceIndex = (sfxSourceIndex + 1) % sfxSources.Count;
+            // SMH bug fix
         }
     }
 
@@ -83,13 +118,17 @@ public class SoundManager : MonoBehaviour
     }
 
     // ✅ 추가: 걷기 효과음 루프 전용 함수
-    public void PlayRunLoop()
+    public void PlayRunLoop(bool isGrounded)    // SMH bug fix --> previous : public void PlayRunLoop()
     {
+        if (!isGrounded) return;    // SMH bug fix
+
         if (sfxDict.TryGetValue("runClip", out var clip))
         {
-            sfxSource.clip = clip;
-            sfxSource.loop = true;
-            sfxSource.Play();
+            if (sfxSource.clip == clip && sfxSource.isPlaying) return;  // SMH bug fix
+
+                sfxSource.clip = clip;
+                sfxSource.loop = true;
+                sfxSource.Play();
         }
     }
 

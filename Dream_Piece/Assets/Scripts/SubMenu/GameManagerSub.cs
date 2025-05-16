@@ -70,7 +70,7 @@ public class GameManagerSub : MonoBehaviour
         {
             if (!isRunningSoundPlaying)
             {
-                SoundManager.Instance.PlayRunLoop();
+                //SoundManager.Instance.PlayRunLoop();
                 isRunningSoundPlaying = true;
             }
         }
