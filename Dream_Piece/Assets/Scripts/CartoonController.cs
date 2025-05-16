@@ -80,7 +80,7 @@ public class CartoonController : MonoBehaviour
 
     public void StartScene()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
