@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public void AddDreamPiece()
     {
         DreamPiece++;
-        Debug.Log(DreamPiece);
+        SoundManager.Instance.PlaySFX("Item");
     }
 
     public IEnumerator StageClear()

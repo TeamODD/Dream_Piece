@@ -1708,11 +1708,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a914874c06b5f4a1fb74f03f12814f76, type: 3}
   - {fileID: 8300000, guid: d09fa46398af0499b8e39053d5dfd238, type: 3}
   - {fileID: 8300000, guid: 54674b2a832c944f099ef30fab22f4db, type: 3}
+  - {fileID: 8300000, guid: 7d60b1de9e6474fc3ae5cdc46963aaac, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: ca5e79a0a7447b146acf379284344580, type: 3}
   - {fileID: 8300000, guid: 638a4303680cad1429371e91d2573b09, type: 3}
   - {fileID: 8300000, guid: c231eb9f109a6d64aac1159b9f3bb016, type: 3}
   - {fileID: 8300000, guid: c5bf9be05305de042911a94670125809, type: 3}
+  - {fileID: 8300000, guid: 523be423698bf9b499721acb7e340088, type: 3}
+  - {fileID: 8300000, guid: 3d1b176e04019954abe27299cdd77452, type: 3}
+  - {fileID: 8300000, guid: dc4acc737d85f4b478c5c63ac8e5c606, type: 3}
 --- !u!4 &1189382219
 Transform:
   m_ObjectHideFlags: 0

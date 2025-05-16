@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     private float bounceForce = 8f;
     [SerializeField]
     Transform RespawnTransform;
+    [SerializeField]
+    Transform RespawnTransform2;
     // Below Jump Value
     [SerializeField]
     private string platformLayerName = "Platform";
@@ -41,10 +43,10 @@ public class Player : MonoBehaviour
     private GameObject DeathAnimation;
     private bool isDead = false;
     //
-    public GameObject Death;
-
+   
     bool isBouncing = false;
     float bounceCooldown = 1f;
+    bool isSaved = false;
 
     float vx = 0;
     Rigidbody2D rid;
@@ -60,8 +62,8 @@ public class Player : MonoBehaviour
         // Animation Control Value
         animaController = GetComponent<PlayerAnima>();
         //
+        isSaved = false;
         canMove = true;
-        Death.SetActive(false);
     }
 
     // Update is called once per frame
@@ -79,6 +81,10 @@ public class Player : MonoBehaviour
                 return;
             }
 
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            {
+                SoundManager.Instance.PlaySFX("jumpClip");
+            }
 
             float vy = rid.linearVelocityY;
             float inputX = Input.GetAxisRaw("Horizontal");
@@ -191,7 +197,15 @@ public class Player : MonoBehaviour
     public IEnumerator Respawn()
     {
         yield return new WaitForSeconds(1f);
-        gameObject.transform.position = RespawnTransform.position;
+
+        if (isSaved)
+        {
+            gameObject.transform.position = RespawnTransform2.position;
+        }
+        else
+        {
+            gameObject.transform.position = RespawnTransform.position;
+        }
         // ���� = false, �����Ӱ��� = true
         isDead = false;
         canMove = true;
@@ -233,8 +247,9 @@ public class Player : MonoBehaviour
             if (isDead)
             Instantiate(DeathAnimation, transform.position, Quaternion.identity);
             //
-            Death.SetActive(true);
+            //Death.SetActive(true);
             StartCoroutine(Respawn());
+            SoundManager.Instance.PlaySFX("Die");
         }
 
         if (collision.CompareTag("BRB"))
@@ -252,6 +267,11 @@ public class Player : MonoBehaviour
         else if (collision.CompareTag("BLB"))
         {
             BounceInDirection(new Vector2(-1, -1).normalized); 
+        }
+
+        if (collision.CompareTag("SavePoint"))
+        {
+            isSaved = true;
         }
     }
 

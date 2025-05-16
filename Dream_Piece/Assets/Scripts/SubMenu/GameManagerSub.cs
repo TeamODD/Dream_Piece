@@ -64,11 +64,6 @@ public class GameManagerSub : MonoBehaviour
                 ResumeGame();
         }
 
-        // 점프 키 (예: 스페이스)
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SoundManager.Instance.PlaySFX("jumpClip");
-        }
 
         // ▶ A, D 걷기 사운드 (길게 재생)
         if (isGrounded && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))

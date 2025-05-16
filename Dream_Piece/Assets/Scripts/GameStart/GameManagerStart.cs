@@ -29,7 +29,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("StageSelect");
+        SceneManager.LoadScene("StartAniScene");
     }
 
     public void OpenHowTo()

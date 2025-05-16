@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CartoonController : MonoBehaviour
 {
@@ -22,12 +23,19 @@ public class CartoonController : MonoBehaviour
     {
         foreach (var obj in stepObjects)
             obj.SetActive(false);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if(currentSceneName == "EndingScene")
+        {
+            SoundManager.Instance.PlayBGM("EndingBGM");
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && !isAutoPlaying)
+        if (((Input.GetKeyDown(KeyCode.Return) || (Input.GetKeyDown(KeyCode.Space)))) && !isAutoPlaying)
         {
+            SoundManager.Instance.PlaySFX("Book");
             if (currentIndex >= stepObjects.Count)
                 return;
 
@@ -42,6 +50,11 @@ public class CartoonController : MonoBehaviour
             // 일반 단일 등장
             stepObjects[currentIndex].SetActive(true);
             currentIndex++;
+        }
+
+        if (!isAutoPlaying && currentIndex >= stepObjects.Count)
+        {
+            SceneManager.LoadScene("StageSelect");
         }
     }
 
